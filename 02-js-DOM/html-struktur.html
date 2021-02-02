@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    main {
+        margin: auto;
+        width: 80%;
+    }
+
+    section {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+
+        grid-gap: 20px;
+    }
+
+    article {
+        border: 1px solid black;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    header,
+    footer {
+        text-align: center;
+        border: 1px solid black;
+        padding 15px;
+    }
+
+</style>
+
+<body>
+    <header>
+        Titel
+    </header>
+
+    <main>
+        <h2>Undertitel</h2>
+        <section>
+            <article>
+                <img src="hellokitty.jpg" alt="Hello kitty" class="first" heigt="400px" width="400px">
+                <h3>Article 1</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere dolorem numquam doloribus alias ratione reiciendis nobis et id quis dolor cum sit sunt suscipit nulla ad perspiciatis, ex porro. Vitae!</p>
+            </article>
+            <article>
+                <img src="haand.jpg" alt="hånd" heigt="400px" width="400px" class="second">
+                <h3>Article 2</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere dolorem numquam doloribus alias ratione reiciendis nobis et id quis dolor cum sit sunt suscipit nulla ad perspiciatis, ex porro. Vitae!</p>
+
+            </article>
+        </section>
+    </main>
+    <footer>This is the footer</footer>
+</body>
+
+</html>
