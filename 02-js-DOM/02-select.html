@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    main {
+        margin: auto;
+        width: 80%;
+    }
+
+    section {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+
+        grid-gap: 20px;
+    }
+
+    article {
+        border: 1px solid black;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    header,
+    footer {
+        text-align: center;
+        border: 1px solid black;
+        padding 15px;
+    }
+
+</style>
+
+<body>
+    <header>
+        Titel
+    </header>
+
+    <main>
+        <h2>Undertitel</h2>
+        <section>
+            <article>
+                <img src="hellokitty.jpg" alt="Hello kitty" class="first" heigt="400px" width="400px">
+                <h3>Article 1</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere dolorem numquam doloribus alias ratione reiciendis nobis et id quis dolor cum sit sunt suscipit nulla ad perspiciatis, ex porro. Vitae!</p>
+            </article>
+            <article>
+                <img src="haand.jpg" alt="hånd" heigt="400px" width="400px" class="second">
+                <h3>Article 2</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere dolorem numquam doloribus alias ratione reiciendis nobis et id quis dolor cum sit sunt suscipit nulla ad perspiciatis, ex porro. Vitae!</p>
+
+            </article>
+        </section>
+
+        <script>
+            const titel = document.querySelector("header");
+            console.log(titel);
+            titel.textContent = "Billedgalleri";
+            titel.innerHTML = "<h1>Billedgalleri</h1>";
+
+
+            const pic1 = document.querySelector("article img");
+            console.log(pic1);
+            pic1.alt = "billede af Hello Kitty";
+
+            const pic2 = document.querySelector("article:nth-child(2) img");
+            console.log(pic2);
+            pic2.alt = "billede af min smukke sommerhånd";
+
+            const article1 = document.querySelector("section article");
+            console.log(article1);
+            article1.alt = "Artikel om Hello Kitty";
+
+            const overskrift = document.querySelector("section h3");
+            console.log(overskrift);
+            overskrift.textContent = "Hello Kitty";
+            overskrift.innerHTML = "<h3>Hello Kitty</h3>";
+
+
+            const overskrift2 = document.querySelector("section article:nth-child(2) h3");
+            console.log(overskrift2);
+            overskrift2.innerHTML = "<h3>Min hånd</h3>";
+            overskrift2.textContent = "Min hånd";
+
+            const undertitel = document.querySelector("h2");
+            console.log(undertitel);
+            undertitel.innerHTML = "<h2>Artikler</h2>";
+
+            const tekst = document.querySelector("p");
+            console.log(tekst);
+            tekst.innerHTML = "<p>blablabla<p>"
+
+            const tekst2 = document.querySelector("section article:nth-child(2) p");
+            console.log(tekst);
+            tekst2.innerHTML = "<p>blablabla<p>"
+
+        </script>
+    </main>
+    <footer>This is the footer</footer>
+</body>
+
+</html>
