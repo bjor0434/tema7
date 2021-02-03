@@ -164,18 +164,18 @@
         article2.style.boxShadow = "10px 10px 5px 0px rgba(0,0,0,0.75)";
 
 
-        document.querySelector("article").addEventListener("mouseover", toggleBoxShadow);
+        document.querySelector("article").addEventListener("mouseover", removeClass);
 
-        function toggleBoxShadow() {
-            console.log("toggleBoxShadow");
-            document.querySelector("article").classList.remove("boxShadow");
+        function removeClass(article, boxShadow) {
+            console.log("BoxShadowOf");
+            document.querySelector("article").classList.remove(".boxShadow");
         }
 
-        document.querySelector("article").addEventListener("mouseout", toggleBoxShadow);
+        document.querySelector("article").addEventListener("mouseout", addClass);
 
-        function toggleBoxShadow() {
-            console.log("toggleBoxShadow");
-            document.querySelector("article").classList.add("boxShadow");
+        function addClass(article, boxShadow) {
+            console.log("BoxShadowOn");
+            document.querySelector("article").classList.add(".boxShadow");
 
         }
 
