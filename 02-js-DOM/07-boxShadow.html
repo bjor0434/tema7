@@ -66,6 +66,10 @@
 
     <footer>This is the footer</footer>
 
+    <style>
+
+    </style>
+
 
     <script>
         //DOMen skal indlæses via en Eventlistener - Når eventet indtræffer kører den funktionen start og så laver den en console log der siger at "dom er loaded"
@@ -147,19 +151,32 @@
 
         newArticle.appendChild(img);
 
-        const tilfaeldigtTal = Math.round(Math.random() * 10);
+
+        //tilføjer boxshadow til article1
 
 
-        pic1.src = "https://placeimg.com/400/300/arch?t=" + tilfaeldigtTal;
-        document.querySelector("pic1").addEventListener("click", nytPic);
+        const article = document.querySelector("article");
+        article.style.boxShadow = "10px 10px 5px 0px rgba(0,0,0,0.75)";
+
+        //tilføjer boxshadow til article1
+
+        const article2 = document.querySelector("article:nth-child(2)");
+        article2.style.boxShadow = "10px 10px 5px 0px rgba(0,0,0,0.75)";
 
 
+        document.querySelector("article").addEventListener("mouseover", toggleBoxShadow);
 
+        function toggleBoxShadow() {
+            console.log("toggleBoxShadow");
+            document.querySelector("article").classList.remove("boxShadow");
+        }
 
-        function nytPic() {
+        document.querySelector("article").addEventListener("mouseout", toggleBoxShadow);
 
-            console.log("tilfaeldigtTal", tilfaeldigtTal);
-            console.log("img", pic);
+        function toggleBoxShadow() {
+            console.log("toggleBoxShadow");
+            document.querySelector("article").classList.add("boxShadow");
+
         }
 
     </script>

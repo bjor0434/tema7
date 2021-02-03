@@ -17,6 +17,8 @@
     <button>Gæt!</button>
     <button id="nyt_spil">Nyt Spil</button>
     <script>
+    
+    
         const tilfaeldigtTal = Math.round(Math.random() * 20);
         document.querySelector("button").addEventListener("click", guessTal);
 
