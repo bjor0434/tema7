@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    main {
+        margin: auto;
+        width: 80%;
+    }
+
+    section {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+
+        grid-gap: 20px;
+    }
+
+    article {
+        border: 1px solid black;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    header,
+    footer {
+        text-align: center;
+        border: 1px solid black;
+        padding 15px;
+    }
+
+</style>
+
+<body>
+    <header>
+        Titel
+    </header>
+
+    <main>
+        <h2>Undertitel</h2>
+        <section>
+            <article>
+                <img src="hellokitty.jpg" alt="Hello kitty" class="first">
+                <h3>Article 1</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere dolorem numquam doloribus alias ratione reiciendis nobis et id quis dolor cum sit sunt suscipit nulla ad perspiciatis, ex porro. Vitae!</p>
+            </article>
+            <article>
+                <img src="haand.jpg" alt="hånd" class="second">
+                <h3>Article 2</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere dolorem numquam doloribus alias ratione reiciendis nobis et id quis dolor cum sit sunt suscipit nulla ad perspiciatis, ex porro. Vitae!</p>
+
+            </article>
+        </section>
+    </main>
+
+
+    <footer>This is the footer</footer>
+
+
+    <script>
+        //DOMen skal indlæses via en Eventlistener - Når eventet indtræffer kører den funktionen start og så laver den en console log der siger at "dom er loaded"
+
+        document.addEventListener("DOMContentLoaded", start)
+
+        function start() {
+            console.log("dom er loaded");
+
+        }
+
+
+        //jeg ændrer titlen med innerHTML
+
+        const titel = document.querySelector("header");
+        console.log(titel);
+        titel.innerHTML = "<h1>Billedgalleri</h1>";
+
+
+        //jeg får fat i et billede og putter det ind i en const variabel
+
+        const pic1 = document.querySelector("article:nth-child(1) img");
+        console.log(pic1);
+        pic1.src = "drinks.jpg";
+        pic1.alt = "drinks";
+
+
+
+        const pic2 = document.querySelector("article:nth-child(2) img");
+        console.log(pic2);
+        pic2.src = "blomster.jpg";
+        pic2.alt = "blomster";
+
+
+
+
+
+        let mainSection = document.querySelector("section");
+        //jeg laver en ny article
+
+        let newArticle = document.createElement("article");
+
+        //jeg laver en ny overskrift til den nye article
+        let overskrift = document.createElement("h3");
+
+        //jeg laver en ny tekst til den nye overskrift
+        let overskriftText = document.createTextNode("Article 3");
+
+        //jeg laver en ny p til den nye article
+
+        let nyTekst = document.createElement("p");
+
+        nyTekst.innerHTML = "Dette er teksten i article 3";
+
+        //sætter p ind i article
+        newArticle.appendChild(nyTekst);
+
+
+        //indsæt tekst i overskrift
+        overskrift.appendChild(overskriftText);
+
+        //indsæt  overskrift
+        newArticle.appendChild(overskrift);
+
+        //tilføjer ny article til section
+
+        mainSection.appendChild(newArticle);
+
+        //jeg tilføjer nyt billeder
+
+        let img = document.createElement("img");
+        console.log(img);
+
+        //link til nyt billede
+
+        img.src = "vifte.jpg";
+
+        //tilføjer billede til article
+
+        newArticle.appendChild(img);
+
+    </script>
+
+</body>
+
+</html>
