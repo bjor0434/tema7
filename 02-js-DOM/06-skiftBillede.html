@@ -147,19 +147,14 @@
 
         newArticle.appendChild(img);
 
-        const tilfaeldigtTal = Math.round(Math.random() * 10);
+        //indsæt tilfældigt billede når man klikker på det
 
+        const tilfældigtTal = Math.round(Math.random() * 10);
 
-        pic1.src = "https://placeimg.com/400/300/arch?t=" + tilfaeldigtTal;
-        document.querySelector("pic1").addEventListener("click", nytPic);
+        pic1.addEventListener("click", skiftBillede);
 
-
-
-
-        function nytPic() {
-
-            console.log("tilfaeldigtTal", tilfaeldigtTal);
-            console.log("img", pic);
+        function skiftBillede() {
+            pic1.src = "https://placeimg.com/640/480/any/grayscale" + tilfældigtTal;
         }
 
     </script>
