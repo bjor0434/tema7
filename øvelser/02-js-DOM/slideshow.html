@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slideshow</title>
+</head>
+
+<body>
+    <h1>Tro på det...</h1>
+
+
+    <footer>This is the footer</footer>
+
+
+    <script>
+        //opret array
+
+        let billeder = ["drinks.jpg", "haand.jpg", "blomster.jpg"];
+        //klik på knap for at skifte billede
+
+        const knap = document.querySelector("button");
+        const billede = document.querySelector("img");
+        let number = 0;
+
+        knap.addEventListener("click", skiftBillede);
+
+        //opretfunktion til at skifte billede
+        function skiftBillede() {
+            billede.src = "billeder/" + billeder[number];
+
+            if (number < 2) {
+                number++;
+                knap.textContent = "Videre";
+
+            } else {
+                knap.textContent = "Forfra";
+                number = 0;
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>
