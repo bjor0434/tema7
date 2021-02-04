@@ -12,8 +12,6 @@
     <section id="liste"></section>
 
     <script>
-        document.addEventListener("DOMContentLoaded", start);
-
         let dyr = [{
                 "navn": "frø",
                 "type": "amfibie",
@@ -41,23 +39,6 @@
             }
         ];
 
-        function start() {
-            console.log(dyr[0].navn.type);
-            console.log(dyr[0].type);
-            console.log(dyr[0].billede);
-            console.log(dyr[0].navn);
-            console.log(dyr[0].navn);
-            const listevisning = document.querySelector("#liste");
-            //løb dyrelisten igennem og indsæt i #liste
-            dyr.forEach(dyr => {
-                //placer dyr i html
-                listevisning.innerHTML += `<p>${dyr.navn} ${dyr.type} ${dyr.billede}</p>`
-            })
-
-
-        }
-
+        console.log(dyr);
     </script>
-</body>
-
-</html>
+</body></html>
