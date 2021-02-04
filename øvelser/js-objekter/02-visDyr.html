@@ -9,7 +9,10 @@
 
 <body>
 
-    <article></article>
+    <article id="dyr">
+        <p></p>
+        <img src="" alt="">
+    </article>
 
     <script>
         document.addEventListener("DOMContentLoaded", start)
@@ -19,15 +22,21 @@
 
         }
 
-        let dyr = {
+        const dyr = {
             "Dyr": "gris",
             "Type": "pattedyr",
-            "Billede": "http://mabe-kea.dk/E19/pics/pig.png",
             "Levested": "svinefarme",
+            "Billede": "http://mabe-kea.dk/E19/pics/pig.png"
 
         }
 
         console.log(`Dyr: ${dyr.Dyr}, Type: ${dyr.Type}, Levested: ${dyr.Levested}`)
+
+
+        const destination = document.querySelector("#dyr");
+        const grisseBasse = `Dyr: ${dyr.Dyr}, Type: ${dyr.Type}, Levested: ${dyr.Levested}`;
+        destination.querySelector("p").textContent = grisseBasse;
+        destination.querySelector("img").src = dyr.Billede;
 
     </script>
 </body>
