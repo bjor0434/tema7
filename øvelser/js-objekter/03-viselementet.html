@@ -12,9 +12,8 @@
     <article id="dyr">
         <h3></h3>
         <img src="" alt="">
-
-        <p>Type:</p>
-        <p>Levested:</p>
+        <p id="type">Type:</p>
+        <p id="levested">Levested:</p>
     </article>
 
     <script>
@@ -38,10 +37,12 @@
 
         const destination = document.querySelector("#dyr");
         const overSkrift = `${dyr.Dyr}`;
-        const p1 = `${dyr.Type}`;
+        const Type = `Type: ${dyr.Type}`;
+        const Levested = `Levested: ${dyr.Levested}`;
         destination.querySelector("h3").textContent = overSkrift;
         destination.querySelector("img").src = dyr.Billede;
-        destination.querySelector("p").textContent = p1;
+        destination.querySelector("#type").textContent = Type;
+        destination.querySelector("#levested").textContent = Levested;
 
     </script>
 </body>
