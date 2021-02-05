@@ -1,164 +1,165 @@
+Skip to content
+Search or jump to…
+
+Pull requests
+Issues
+Marketplace
+Explore
+
+@bjor0434
+martinbregnhoi
+/
+DOM_F21
+1
+00
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+DOM_F21/06-skiftBillede.html
+
+= 06-skiftBillede.html rettet
+Latest commit 0b7b6c5 on 17 Aug 2020
+History
+0 contributors
+118 lines (99 sloc) 3.62 KB
+
 <!DOCTYPE html>
-<html lang="">
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <meta charset="UTF-8">
+    <title>Indhold 02</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        main {
+            width: 80vw;
+            margin: 0 auto;
+        }
+
+        section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            grid-gap: 20px;
+            /*
+            display: flex;
+            flex-wrap: wrap;
+*/
+
+        }
+
+        article {
+            /*           flex-basis: 50%;*/
+            border: 1px solid #333;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        h1,
+        footer {
+            text-align: center;
+        }
+
+        header,
+        footer {
+            padding: 10px 0;
+        }
+
+        article:nth-child(1) img {
+            cursor: pointer;
+        }
+
+    </style>
 </head>
-<style>
-    * {
-        margin: 0;
-        padding: 0;
-    }
-
-    main {
-        margin: auto;
-        width: 80%;
-    }
-
-    section {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-
-        grid-gap: 20px;
-    }
-
-    article {
-        border: 1px solid black;
-    }
-
-    img {
-        width: 100%;
-    }
-
-    header,
-    footer {
-        text-align: center;
-        border: 1px solid black;
-        padding 15px;
-    }
-
-</style>
 
 <body>
     <header>
-        Titel
+        <h1>Titel</h1>
     </header>
-
     <main>
+
         <h2>Undertitel</h2>
         <section>
             <article>
-                <img src="hellokitty.jpg" alt="Hello kitty" class="first">
+                <img src="https://placeimg.com/400/300/arch" alt="" class="first">
                 <h3>Article 1</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere dolorem numquam doloribus alias ratione reiciendis nobis et id quis dolor cum sit sunt suscipit nulla ad perspiciatis, ex porro. Vitae!</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, assumenda tenetur iste reiciendis omnis, optio amet velit quibusdam earum ad hic porro obcaecati incidunt eum cumque commodi accusamus rerum laborum.</p>
             </article>
-            <article>
-                <img src="haand.jpg" alt="hånd" class="second">
+            <article><img src="https://placeimg.com/400/300/any" alt="">
                 <h3>Article 2</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere dolorem numquam doloribus alias ratione reiciendis nobis et id quis dolor cum sit sunt suscipit nulla ad perspiciatis, ex porro. Vitae!</p>
-
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, assumenda tenetur iste reiciendis omnis, optio amet velit quibusdam earum ad hic porro obcaecati incidunt eum cumque commodi accusamus rerum laborum.</p>
             </article>
         </section>
     </main>
-
-
     <footer>This is the footer</footer>
-
-
     <script>
-        //DOMen skal indlæses via en Eventlistener - Når eventet indtræffer kører den funktionen start og så laver den en console log der siger at "dom er loaded"
+        const articleSection = document.querySelector("section");
+        const title = document.querySelector("header h1");
+        const article1 = document.querySelector("article:nth-child(1)");
+        let img1 = document.querySelector("article:nth-child(1) img");
+        let img2 = document.querySelector("article:nth-child(2) img");
+        let img3;
+        const article1Heading = document.querySelector("article:nth-child(1) h3");
+        const article1Content = document.querySelector("article:nth-child(1) p");
 
-        document.addEventListener("DOMContentLoaded", start)
+        document.addEventListener("DOMContentLoaded", start);
 
         function start() {
-            console.log("dom er loaded");
+            title.textContent = "Billeder";
+            article1Heading.textContent = "Arkitektur";
+            article1Content.textContent = "Bygninger skaber rum";
+            img1.src = "maude.png";
+            img1.alt = "Caprice 30 - Maude";
+
+
+            let newArticle = document.createElement("article");
+            let newH3 = document.createElement("h3");
+            let newHeadlineText = document.createTextNode("Mennesker");
+            newH3.appendChild(newHeadlineText);
+            let newPic = document.createElement("img");
+            newPic.src = "https://placeimg.com/400/300/any?t=4";
+            let newContent = document.createElement("p");
+            newContent.textContent = "Her står der noget om mennesker";
+            newArticle.appendChild(newPic);
+            newArticle.appendChild(newH3);
+            newArticle.appendChild(newContent);
+            articleSection.appendChild(newArticle);
+
+            img1.addEventListener("click", skiftBillede);
 
         }
 
 
-        //jeg ændrer titlen med innerHTML
-
-        const titel = document.querySelector("header");
-        console.log(titel);
-        titel.innerHTML = "<h1>Billedgalleri</h1>";
-
-
-        //jeg får fat i et billede og putter det ind i en const variabel
-
-        const pic1 = document.querySelector("article:nth-child(1) img");
-        console.log(pic1);
-        pic1.src = "drinks.jpg";
-        pic1.alt = "drinks";
-
-
-
-        const pic2 = document.querySelector("article:nth-child(2) img");
-        console.log(pic2);
-        pic2.src = "blomster.jpg";
-        pic2.alt = "blomster";
-
-
-
-
-
-        let mainSection = document.querySelector("section");
-        //jeg laver en ny article
-
-        let newArticle = document.createElement("article");
-
-        //jeg laver en ny overskrift til den nye article
-        let overskrift = document.createElement("h3");
-
-        //jeg laver en ny tekst til den nye overskrift
-        let overskriftText = document.createTextNode("Article 3");
-
-        //jeg laver en ny p til den nye article
-
-        let nyTekst = document.createElement("p");
-
-        nyTekst.innerHTML = "Dette er teksten i article 3";
-
-        //sætter p ind i article
-        newArticle.appendChild(nyTekst);
-
-
-        //indsæt tekst i overskrift
-        overskrift.appendChild(overskriftText);
-
-        //indsæt  overskrift
-        newArticle.appendChild(overskrift);
-
-        //tilføjer ny article til section
-
-        mainSection.appendChild(newArticle);
-
-        //jeg tilføjer nyt billeder
-
-        let img = document.createElement("img");
-        console.log(img);
-
-        //link til nyt billede
-
-        img.src = "vifte.jpg";
-
-        //tilføjer billede til article
-
-        newArticle.appendChild(img);
-
-        //indsæt tilfældigt billede når man klikker på det
-
-        const tilfældigtTal = Math.round(Math.random() * 10);
-
-        pic1.addEventListener("click", skiftBillede);
 
         function skiftBillede() {
-            pic1.src = "https://placeimg.com/640/480/any/grayscale" + tilfældigtTal;
+            // console.log(this);
+            let tal = Math.round(Math.random() * 10);
+            img1.src = "https://placeimg.com/400/300/arch?t=" + tal;
         }
 
     </script>
-
 </body>
 
 </html>
+© 2021 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About

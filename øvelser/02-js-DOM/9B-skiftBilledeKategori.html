@@ -1,0 +1,71 @@
+Skip to content
+Search or jump to…
+
+Pull requests
+Issues
+Marketplace
+Explore
+
+@bjor0434
+alan-engelhardt
+/
+T7_loesninger
+1
+00
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+T7_loesninger/9b_skift_kategori.html
+
+Alan Engelhardt let ændret til const
+Latest commit 28e8592 2 hours ago
+ History
+ 0 contributors
+29 lines (22 sloc)  830 Bytes
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Billedskift</title>
+</head>
+
+<body>
+    <img id="billede" src="https://placeimg.com/600/400/people" alt="people">
+    <figcaption id="cap"></figcaption>
+
+    <script>
+        const kategorier = ["animals", "arch", "people", "nature", "tech"];
+
+        billede.addEventListener("click", skift);
+
+        function skift() {
+            const billedTal = Math.round(Math.random() * 10);
+            const kategoriIndex = Math.round(Math.random() * 4);
+            billede.src = "https://placeimg.com/600/400/" + kategorier[kategoriIndex] + "?t=" + billedTal;
+            billede.alt = kategorier[kategoriIndex] + " nr " + billedTal;
+            cap.textContent = kategorier[kategoriIndex] + " nr " + billedTal;
+        };
+
+    </script>
+</body>
+
+</html>
+© 2021 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
